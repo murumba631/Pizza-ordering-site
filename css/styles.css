@@ -2,5 +2,7 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
-    background: url();
+    background: url("https://github.com/murumba631/Pizza-ordering-site/blob/master/images/murumba's-pizzeria.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
