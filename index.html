@@ -175,17 +175,17 @@
        <div class="row" id="order-form">
             <div class="col-md-6">
                 <form id="orderstyle">
-                    <div id="sizeSelect" class="form-group">
+                    <div class="form-group">
                         <h5>Select the size you desire:</h5>
-                        <select class="form-control col-md-6 three" id="size"> 
+                        <select class="form-control col-md-6 three" id="sizeSelect"> 
                             <option value="large">Large</option>
                             <option value="medium">Medium</option>
                             <option value="small">Small</option>
                         </select> 
                     </div>
-                    <div id="crustSelect" class="form-group">
+                    <div class="form-group">
                         <h5>Select your crust:</h5>
-                        <select class="form-control col-md-6 three" id="crust">
+                        <select class="form-control col-md-6 three" id="crustSelect">
                             <option value="crispy">Crispy</option>
                             <option value="stuffed">Stuffed</option>
                             <option value="gluten-free">Gluten-free</option>
@@ -213,19 +213,37 @@
                         <label for="extra-cheese">Extra cheese</label>
                         <br>
                     </div>
-                    <button type="btn add btn-bg-secondary"id="order">order</button>
+                    <div>
+                        <select class="form-control col-md-6 three" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <button type="btn add btn-bg-secondary"id="order">Place order</button>
+                    <br>
+                    <br>
+                    <button type="submit"></button>
                 </form>
             </div>
            <div class="col-md-6">
                <div class="card">
                    <div class="jumbotron">Your order:</div>
-                   <p><span id="orderoutput"> </span></p>
-                   <div class="jumbotron">Cost: </div>
-                   <p><span id="ordercost"> </span></p>
-               </div>
-               <div class="orderBkt">
-                <h5>Your final order:</h5>
-                <p id="final-order"> </p>
+                   <div id="orderdisplay">
+                    <p>
+                        <ol>
+                            <li id="size"> </li>
+                            <li id="topping"> </li>
+                            <li id="crust"> </li>
+                             <li id="cost"> </li>
+                        </ol>
+                    </p>
+                   </div>
                </div>
            </div>
        </div>
