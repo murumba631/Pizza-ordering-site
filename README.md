@@ -14,3 +14,7 @@ The user can:
 - Select number of pizzas you'd desire to order.
 - Input home address for home delivery.
 - See the total cost for their order.
+
+
+## Link to published site:
+https://murumba631.github.io/Pizza-ordering-site/
