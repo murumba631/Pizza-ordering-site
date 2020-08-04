@@ -10,13 +10,14 @@ var medium = 450;
 var large = 600;
 var toppings = 80;
 
-$("#order").click(function (event) {
-$(document).ready(function () {
+
+$(document).ready(function orderPlacing(event) {
+    $("input#order").submit(function () {
         // Getting values from the form
-        size = $("#sizeSelect").val();
-        crust = $("#crustSelect").val();
-        topping = $("#toppingSelect").val();
-        quantity = $("#quantity").val();
+        size = $("input#" + sizeSelect).val();
+        crust = $("input#crustSelect").val();
+        topping = $("input#toppingSelect").val();
+        quantity = $("input#quantity").val();
 
         // Getting total cost
         if (size == "small" && toppings == "") {
@@ -29,22 +30,25 @@ $(document).ready(function () {
             var price = medium * quantity + crust + toppings;
         }   else if (size == "large" && crust == "" && toppings == "") {
             var price = large * quantity;
-        }   else (size == "large" && crust == "crispy" || crust == "glutenFree" || crust == "stuffed" && toppings == "extraCheese" || toppings == "ham" || toppings == "sausage" || toppings == "bellPeppers" || toppings == "mushrooms" || toppings == "pineapple" || toppings == "bacon" || toppings == "pepporoni") {
+        }   else if (size == "large" && crust == "crispy" || crust == "glutenFree" || crust == "stuffed" && toppings == "extraCheese" || toppings == "ham" || toppings == "sausage" || toppings == "bellPeppers" || toppings == "mushrooms" || toppings == "pineapple" || toppings == "bacon" || toppings == "pepporoni") {
             var price = large * quantity + crust + toppings;
         };
 
         var newOrder = new Order(size, crust, toppings, price);
-        var orderDispay = '<p><ul><li id="size">' + newOrder.size + '</li><li id="topping">' + newOrder.toppings + '</li><li id="crust>' + newOrder.crust + '</li><li id="cost">' + newOrder.price + '</li></ol></p>';
-        $("#orderdisplay").append(orderDispay);
+        $("ul#orderdisplay").append("<li>" + "Size:" + newOrder.size + "</li>" + "<li>" + "Toppings" + newOrder.toppings + "</li>" + "<li>" + "Crust:" + newOrder.crust + "</li>" + "<li>" + "Cost:" + newOrder.price + "</li>")
+        console.log(newOrder);
+        event.preventDefault();
     });
-    event.preventDefault();
-
 });
 
 // Displaying delivery
-$("#delivery").click(function() {
-    $(document).ready(function() {
-        prompt("Enter you would want your order to be delivered to:");
+$(document).ready(function() {
+    $("#delivery").submit(function(event) {
+
+        var address = $("input#userAddress").val();
+        
+
         alert("Thank you for your response, the delivery will take an hour.");
+        event.preventDefault();
     });
 });

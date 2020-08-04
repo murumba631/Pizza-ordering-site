@@ -11,6 +11,7 @@
     </head>
     <body>
         <div id="page-head">
+            <img src="images/murumba-logo.png" alt="murumba's-logo" class="logo-image" height="350" width="auto">
             <h1 class="topic">Murumba's Pizzeria.</h1>
         </div>
         <div class="container" id="pizza-sizes">
@@ -114,25 +115,29 @@
                             <option value="8">8</option>
                         </select>
                     </div>
-                    <button type="btn add btn-bg-secondary"id="order">Place order</button>
+                    <input type="button" value="Place order" id="order">
                     <br>
                     <br>
-                    <button class="btn bg-success" type="submit" id="delivery">Delivery</button>
+                    <div class="deliveryform">
+                        <input type="text" size="50px" id="userAddress" placeholder="Enter Address">
+                        <br>
+                        <br>
+                        <input type="text" id="userEstate" size="50px" placeholder="Enter Estate/road">
+                        <br>
+                        <br>
+                        <input type="submit" id="submit" value="Delivery">
+                    </div>    
                 </form>
             </div>
            <div class="col-md-6">
                <div class="card">
-                   <div class="jumbotron">Your order:</div>
-                   <div id="orderdisplay">
-                    <p>
-                        <ul>
-                            <li id="size"> </li>
-                            <li id="topping"> </li>
-                            <li id="crust"> </li>
-                             <li id="cost"> </li>
-                        </ul>
-                    </p>
-                   </div>
+                   <div class="jumbotron">Your order:</div>                   
+                    <ul id="orderdisplay">
+                        <li> Size: </li>
+                        <li> Toppings: </li>
+                        <li> Crust:</li>
+                        <li> Price: </li>
+                    </ul>
                </div>
            </div>
        </div>

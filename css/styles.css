@@ -29,3 +29,6 @@ body{
 #orderstyle{
     color: orange;
 }
+.logo-image{
+    align-self: start;
+}
