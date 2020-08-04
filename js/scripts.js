@@ -8,8 +8,7 @@ function  orders(sizeSelect, crustSelect, toppingSelect) {
 var small = 300;
 var medium = 450;
 var large = 600;
-var meatToppings = 60;
-var veggieToppings = 80;
+var toppings = 80;
 
 $("#order").click(function (event) {
 $(document).ready(function () {
@@ -19,6 +18,7 @@ $(document).ready(function () {
         topping = $("#toppingSelect").val();
         quantity = $("#quantity").val();
 
+        // Getting total cost
         if (size == "small" && toppings == "") {
             var price = small * quantity;
         }   else if (size == "small" && crust == "crispy" || crust == "glutenFree" || crust == "stuffed" && toppings == "extraCheese" || toppings == "ham" || toppings == "sausage" || toppings == "bellPeppers" || toppings == "mushrooms" || toppings == "pineapple" || toppings == "bacon" || toppings == "pepporoni") {
@@ -33,9 +33,18 @@ $(document).ready(function () {
             var price = large * quantity + crust + toppings;
         };
 
-        var myOrder = newOrder(size, crust, toppings, price);
-        var orderDispay = '<p><ol><li id="size">' + newOrder.size + '</li><li id="topping">' + newOrder.toppings + '</li><li id="crust>' + newOrder.crust + '</li><li id="cost">' + newOrder.price + '</li></ol></p>';
+        var newOrder = new Order(size, crust, toppings, price);
+        var orderDispay = '<p><ul><li id="size">' + newOrder.size + '</li><li id="topping">' + newOrder.toppings + '</li><li id="crust>' + newOrder.crust + '</li><li id="cost">' + newOrder.price + '</li></ol></p>';
         $("#orderdisplay").append(orderDispay);
     });
     event.preventDefault();
+
+});
+
+// Displaying delivery
+$("#delivery").click(function() {
+    $(document).ready(function() {
+        prompt("Enter you would want your order to be delivered to:");
+        alert("Thank you for your response, the delivery will take an hour.");
+    });
 });
